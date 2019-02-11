@@ -3,8 +3,8 @@ podTemplate(label: 'java', containers: [containerTemplate(name: 'jdk8', image: '
     checkout scm
     container("jdk8") {
       stage('Test') {
-        chmod +x gradlew
-        sh './gradlew cucumber'
+        sh '''chmod +x gradlew; 
+        ./gradlew cucumber'''
       }
     }
   }
